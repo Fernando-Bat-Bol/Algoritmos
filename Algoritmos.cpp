@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stack>
 #define RANGE 255
-#define N 8
+#define N 8 //Tamaño del tablero para las N-Reinas
 
 using namespace std;
 
@@ -286,18 +286,24 @@ int factorial_algoritmo(int n){
 }
 void mergeSort(){
     system("cls");
-    int arr[] = { 52, 101, 13, 25, 16, 47 };
-    int arr_tam = sizeof(arr) / sizeof(arr[0]);
+    int tam;
+    cout<<"De que tamaño quiere el arreglo de numeros?\n";
+    cin>>tam;
+    int arr[tam];
+    for(int i=0; i<tam; i++){
+        cout<<"Ingrese el numero "<<i+1<<" del arreglo\n";
+        cin>>arr[i];
+    }
+    system("cls");
     cout<<"El arreglo de numeros es este:"<<endl;
-    for (int i=0; i<6; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
-    system("cls");
-    mergeSort_algoritmo(arr, 0, arr_tam - 1);
+    mergeSort_algoritmo(arr, 0, tam - 1);
 
     cout << "\nArreglo ordenado \n";
-    for (int i=0; i<6; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
@@ -350,16 +356,23 @@ void mershe(int arr[], int l, int m, int r){
 }
 void heapSort(){
     system ("cls");
-    int arr[] = { 12, 11, 13, 5, 1, 7 };
+    int tam;
+    cout<<"De que tamaño quiere el arreglo de numeros?\n";
+    cin>>tam;
+    int arr[tam];
+    for(int i=0; i<tam; i++){
+        cout<<"Ingrese el numero "<<i+1<<" del arreglo\n";
+        cin>>arr[i];
+    }
+    system("cls");
     cout<<"El arreglo de numeros es este:"<<endl;
-    for (int i=0; i<6; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
-    int n = sizeof(arr) / sizeof(arr[0]);
-    heapSort_algoritmo(arr, n);
+    heapSort_algoritmo(arr, tam);
     cout << "El arreglo ordernado es: \n";
-    for (int i=0; i<6; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
@@ -391,7 +404,12 @@ void heapify(int arr[], int n, int i){
 }
 void counting_Sort(){
     system("cls");
-    char arr[] = "nomerepruebeprofe";
+    string arr_str;
+    cout<<"Ingrese una palabra o frase sin espacios\n"; //por codigo ascii primero saldrian las mayusculas
+    cin>>arr_str;
+    int n= arr_str.length();
+    char arr[n+1];
+    strcpy(arr, arr_str.c_str());
     cout<<"Arreglo de caracteres sin ordenar: "<<arr<<endl;
     system("pause");
     counting_Sort_algoritmo(arr);
@@ -415,16 +433,24 @@ void counting_Sort_algoritmo(char arr[]){
 }
 void quick_sort(){
     system("cls");
-    int arr[] = {10, 7, 8, 9, 1, 5};
+    int tam;
+    cout<<"De que tamaño quiere el arreglo de numeros?\n";
+    cin>>tam;
+    int arr[tam];
+    for(int i=0; i<tam; i++){
+        cout<<"Ingrese el numero "<<i+1<<" del arreglo\n";
+        cin>>arr[i];
+    }
+    system("cls");
     cout<<"El arreglo de numeros es este:"<<endl;
-    for (int i=0; i<6; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
     int n = sizeof(arr) / sizeof(arr[0]);
-    quick_sort_algoritmo(arr, 0, n - 1);
+    quick_sort_algoritmo(arr, 0, tam - 1);
     cout << "Arreglo ordenado: \n";
-    for (int i=0; i<6; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
@@ -473,32 +499,46 @@ void randomized_quickSort_algoritmo(int arr[], int low, int high){
 }
 void rQuicksort(){
     system("cls");
-    int arr[] = { 100,25,1,13,20,57,95 };
+    int tam;
+    cout<<"De que tamaño quiere el arreglo de numeros?\n";
+    cin>>tam;
+    int arr[tam];
+    for(int i=0; i<tam; i++){
+        cout<<"Ingrese el numero "<<i+1<<" del arreglo\n";
+        cin>>arr[i];
+    }
+    system("cls");
     cout<<"El arreglo de numeros es este:"<<endl;
-    for (int i=0; i<7; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
-    int n = sizeof(arr) / sizeof(arr[0]);
-    randomized_quickSort_algoritmo(arr, 0, n - 1);
+    randomized_quickSort_algoritmo(arr, 0, tam - 1);
     cout<<"Arreglo ordenado: \n";
-    for (int i=0; i<7; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
 }
 void radixSort(){
     system("cls");
-    int arr[] = { 170, 45, 75, 90, 802, 24, 2, 66 };
+    int tam;
+    cout<<"De que tamaño quiere el arreglo de numeros?\n";
+    cin>>tam;
+    int arr[tam];
+    for(int i=0; i<tam; i++){
+        cout<<"Ingrese el numero "<<i+1<<" del arreglo\n";
+        cin>>arr[i];
+    }
+    system("cls");
     cout<<"El arreglo de numeros es este:"<<endl;
-    for (int i=0; i<8; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
-    int n = sizeof(arr) / sizeof(arr[0]);
-    radixSort_algoritmo(arr, n);
+    radixSort_algoritmo(arr, tam);
     cout<<"Arreglo ordenado: \n";
-    for (int i=0; i<8; i++){
+    for (int i=0; i<tam; i++){
         cout<<arr[i]<<endl;
     }
     system("pause");
